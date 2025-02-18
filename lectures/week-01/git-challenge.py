@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import pandas as pd
 
 def person_a():
     """Reads the data in data/school_performance.csv
@@ -9,23 +10,11 @@ def person_a():
     dataframe: containing first 5,000 rows of school_performace.csv
     """
     # Code goes over here.
-
+    return df.head(5000) 
     
     raise NotImplementedError()
 
-def person_b(df):
-    """Keeps only the data from the female students. 
-    Where the column "gender" equals "female". 
-
-    Parameters:
-    df (dataframe): First 5,000 rows of school_performace.csv
-
-    Returns:
-    dataframe: Data from the female students
-    """
-    # Code goes over here.
-
-    raise NotImplementedError()
+https://github.com/freyua911/mlbd-2025.git
 
 def person_c(df):
     """Calculates the mean from the column "grade"
@@ -37,12 +26,16 @@ def person_c(df):
     float: Mean grade
     """
     # Code goes over here.
+    mean_female_grade = df[df["gender"].str.lower() == "female"]["grade"].mean()
+    return mean_female_grade
 
     raise NotImplementedError()
 
 def main():
     """ Main program """
     # Code goes over here.
+    file_path = "data/school_performance.csv"
+    df = pd.read_csv(file_path)
     df = person_a()
     df = person_b(df)
     res = person_c(df)
