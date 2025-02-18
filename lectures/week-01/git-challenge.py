@@ -9,9 +9,9 @@ def person_a():
     Returns:
     dataframe: containing first 5,000 rows of school_performace.csv
     """
-    # Code goes over here.
-    
-    raise NotImplementedError()
+    data = pd.read_csv('../../data/school_performance.csv')
+
+    return data
 
 def person_b(pdf):
     """Keeps only the data from the female students. 
@@ -40,7 +40,8 @@ def person_c(df):
     float: Mean grade
     """
     # Code goes over here.
-    raise NotImplementedError()
+
+    return df['grade'].mean()
 
 def main():
     """ Main program """
