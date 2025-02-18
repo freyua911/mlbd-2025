@@ -13,7 +13,7 @@ def person_a():
 
     return data
 
-def person_b(df):
+def person_b(pdf):
     """Keeps only the data from the female students. 
     Where the column "gender" equals "female". 
 
@@ -24,8 +24,11 @@ def person_b(df):
     dataframe: Data from the female students
     """
     # Code goes over here.
+    df_female = pdf[pdf["gender"].str.lower() == "female"]
+    return df_female.head() 
 
     raise NotImplementedError()
+
 
 def person_c(df):
     """Calculates the mean from the column "grade"
@@ -37,8 +40,8 @@ def person_c(df):
     float: Mean grade
     """
     # Code goes over here.
+
     return df['grade'].mean()
-    raise NotImplementedError()
 
 def main():
     """ Main program """
